@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "BGW Studios"
+description = "A warm editorial portfolio website for BGW Studios, showcasing creative design, web development, and coding projects with a thoughtful handcrafted visual identity."
+version = "1.0.0"
+id = "artifacts/bgw-studios"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20998
+
+[services.development]
+run = "pnpm --filter @workspace/bgw-studios run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bgw-studios", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bgw-studios/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20998"
+BASE_PATH = "/"

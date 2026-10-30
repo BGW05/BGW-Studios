@@ -1,0 +1,326 @@
+<title>About — BGW Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F9F5EE;
+    --marble:#EFECE8;
+    --gold:#B08D57;
+    --charcoal:#3A3632;
+    --heading:#1F2A24;
+    --blush:#EBC9C9;
+    --rose-circle:#E6C3BE;
+    --sage-circle:#93A38A;
+    --sage-btn:#7D8F7A;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Montserrat', sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; color:inherit; }
+  .script{ font-family:'Alex Brush', cursive; color:var(--gold); }
+  .serif{ font-family:'Playfair Display', serif; color:var(--heading); }
+
+  /* ===== HEADER ===== */
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 60px;
+    background:var(--cream);
+    border-bottom:1px solid #e6e0d3;
+  }
+  .logo-block{ display:flex; align-items:center; gap:16px; }
+  .monogram{
+    width:64px; height:64px; border:1.5px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif; font-weight:600; font-size:20px; color:var(--gold);
+  }
+  .logo-divider{ width:1px; height:40px; background:#d8cdb8; }
+  .logo-text-block .site-name{ font-family:'Playfair Display', serif; font-size:24px; letter-spacing:2px; color:var(--heading); }
+  .logo-text-block .site-sub{ font-size:11px; letter-spacing:2px; color:var(--gold); margin-top:4px; }
+  nav{ display:flex; gap:34px; }
+  nav a{ font-size:12px; letter-spacing:1.5px; font-weight:500; padding-bottom:6px; }
+  nav a.active{ color:var(--gold); border-bottom:1px solid var(--gold); }
+  .tagline-block{ display:flex; align-items:center; gap:14px; }
+  .tagline-script{ font-family:'Alex Brush', cursive; font-size:19px; color:var(--gold); }
+  .sprig{ width:28px; height:38px; }
+
+  /* ===== HERO BAND ===== */
+  .hero{
+    display:flex; align-items:center; min-height:280px;
+    background:linear-gradient(90deg, var(--cream) 55%, var(--marble) 55%);
+    position:relative; overflow:hidden;
+  }
+  .hero-florals-left{
+    position:absolute; left:0; top:0; bottom:0; width:130px;
+    background:radial-gradient(circle at 20% 30%, #f3cdd8, transparent 55%),
+               radial-gradient(circle at 10% 70%, #eddcc9, transparent 50%);
+  }
+  .hero-text{
+    flex:0 0 50%;
+    padding-left:130px;
+    border-left:1px solid var(--gold);
+    margin-left:8px;
+  }
+  .hero-text .script{ font-size:22px; display:block; margin-bottom:14px; }
+  .hero-text h1{ font-size:56px; font-weight:500; margin-bottom:18px; }
+  .hero-rule{ display:flex; align-items:center; gap:12px; width:420px; margin-bottom:18px; }
+  .hero-rule .line{ flex:1; height:1px; background:var(--gold); }
+  .hero-rule svg{ width:16px; height:16px; }
+  .hero-sub{ font-size:12.5px; letter-spacing:2px; color:var(--charcoal); }
+  .hero-sub .sep{ color:var(--gold); margin:0 8px; }
+
+  .hero-photo-wrap{
+    flex:0 0 22%;
+    position:relative;
+    height:270px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .blush-block{
+    position:absolute; width:80%; height:120%;
+    background:var(--blush);
+    left:50%; transform:translateX(-50%);
+  }
+  .hero-photo{
+    position:relative; width:230px; height:230px;
+    border:2px solid var(--gold);
+    background:
+      radial-gradient(circle at 55% 45%, #f3cdd8 0%, #eeb8c6 20%, transparent 40%),
+      linear-gradient(135deg, #e9e6e0, #d9d4cb);
+  }
+  .hero-photo::after{
+    content:"peony + gold ring photo";
+    position:absolute; bottom:8px; left:8px; font-size:9px; color:rgba(0,0,0,.35);
+  }
+
+  .hero-quote{
+    flex:1;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:0 50px;
+    position:relative;
+  }
+  .quote-mark{ font-family:'Playfair Display', serif; font-size:60px; color:var(--gold); line-height:1; margin-bottom:6px; }
+  .hero-quote p{ font-family:'Playfair Display', serif; font-style:italic; font-size:22px; line-height:1.45; color:var(--heading); max-width:340px; margin-bottom:16px; }
+  .quote-flourish{ display:flex; align-items:center; gap:10px; }
+  .quote-flourish .line{ width:40px; height:1px; background:var(--gold); }
+
+  /* ===== MAIN CONTENT ===== */
+  .content{
+    display:flex; gap:0;
+    padding:60px 60px 70px;
+    background:var(--cream);
+  }
+  .col-photo{
+    flex:0 0 17%;
+    position:relative;
+    padding-left:10px;
+  }
+  .col-photo .frame{
+    width:100%; height:400px;
+    border:1.5px solid var(--gold);
+    background:linear-gradient(135deg, #eee3d4, #d7c9b8, #e9d3d8);
+    position:relative;
+  }
+  .col-photo .frame::after{
+    content:"books + florals photo";
+    position:absolute; bottom:8px; left:8px; font-size:9px; color:rgba(0,0,0,.35);
+  }
+  .col-text{
+    flex:1;
+    padding:0 40px;
+  }
+  .col-text.divider{ border-left:1px solid #ded6c4; }
+  .col-text h2{ font-size:32px; font-weight:500; margin-bottom:18px; }
+  .col-text p{ font-size:14.5px; line-height:1.75; color:#4a4540; margin-bottom:20px; max-width:380px; }
+  .gap-block{ height:8px; }
+
+  .col-guides{
+    flex:0 0 24%;
+    background:var(--marble);
+    padding:36px 30px;
+    position:relative;
+  }
+  .col-guides .script{ font-size:24px; display:block; margin-bottom:26px; }
+  .guide-row{ display:flex; gap:16px; margin-bottom:26px; align-items:flex-start; }
+  .guide-row:last-child{ margin-bottom:0; }
+  .guide-circle{
+    flex:0 0 60px; height:60px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .guide-circle.rose{ background:var(--rose-circle); }
+  .guide-circle.sage{ background:var(--sage-circle); }
+  .guide-circle svg{ width:26px; height:26px; }
+  .guide-text .label{ font-size:13px; letter-spacing:2px; font-weight:600; margin-bottom:6px; }
+  .guide-text p{ font-size:13px; line-height:1.6; color:#4a4540; max-width:220px; }
+
+  /* ===== FOOTER CTA ===== */
+  .footer-cta{
+    position:relative;
+    text-align:center;
+    padding:55px 20px;
+    border-top:1px solid #e6e0d3;
+    overflow:hidden;
+  }
+  .footer-florals{
+    position:absolute; left:0; bottom:0; width:220px; height:100%;
+    background:radial-gradient(circle at 15% 90%, #f3cdd8, transparent 55%),
+               radial-gradient(circle at 5% 60%, #e8e0cf, transparent 50%);
+  }
+  .footer-marble{
+    position:absolute; right:0; bottom:0; width:200px; height:100%;
+    background:linear-gradient(135deg, var(--marble), #e2ddd4);
+  }
+  .footer-inner{
+    display:inline-flex; align-items:center; gap:30px; position:relative; z-index:2;
+    flex-wrap:wrap; justify-content:center;
+  }
+  .footer-inner .script{ font-size:22px; }
+  .footer-arrow-line{ display:flex; align-items:center; gap:8px; width:120px; }
+  .footer-arrow-line .line{ flex:1; height:1px; background:var(--gold); }
+  .cta-btn{
+    background:var(--sage-btn); color:#fff;
+    font-size:12px; letter-spacing:2px; font-weight:600;
+    padding:14px 26px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 950px){
+    header{ flex-direction:column; gap:14px; padding:20px 24px; }
+    nav{ flex-wrap:wrap; justify-content:center; gap:18px; }
+    .hero{ flex-direction:column; background:var(--cream); }
+    .hero-text{ padding:40px 30px 20px; border-left:none; }
+    .hero-text h1{ font-size:38px; }
+    .hero-rule{ width:100%; }
+    .hero-photo-wrap{ padding:30px 0; height:auto; }
+    .hero-quote{ padding:30px; }
+    .content{ flex-direction:column; padding:40px 24px; gap:36px; }
+    .col-photo{ flex:none; }
+    .col-photo .frame{ height:260px; }
+    .col-text{ padding:0; }
+    .col-text.divider{ border-left:none; border-top:1px solid #ded6c4; padding-top:30px; }
+    .col-guides{ flex:none; }
+    .footer-florals, .footer-marble{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-block">
+      <div class="monogram">BGW</div>
+      <div class="logo-divider"></div>
+      <div class="logo-text-block">
+        <div class="site-name">BGW STUDIOS</div>
+        <div class="site-sub">CREATIVITY + CODE + IMPACT</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#" class="active">ABOUT</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">DOCUMENTATION</a>
+      <a href="#">CONTACT</a>
+    </nav>
+    <div class="tagline-block">
+      <div class="tagline-script">dream + create + build</div>
+      <svg class="sprig" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 38V8" stroke="#B08D57" stroke-width="1"/>
+        <path d="M14 12C14 12 6 10 4 3" stroke="#B08D57" stroke-width="1"/>
+        <path d="M14 18C14 18 22 16 24 6" stroke="#B08D57" stroke-width="1"/>
+      </svg>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-florals-left"></div>
+    <div class="hero-text">
+      <span class="script">A little about the person behind the work</span>
+      <h1 class="serif">About BGW Studios</h1>
+      <div class="hero-rule">
+        <span class="line"></span>
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 16V4M8 6C8 6 4 5 3 1M8 8C8 8 12 7 13 3" stroke="#B08D57" stroke-width="1"/></svg>
+        <span class="line"></span>
+      </div>
+      <div class="hero-sub">A CREATIVE MIND <span class="sep">✦</span> A CURIOUS HEART <span class="sep">✦</span> A PURPOSE</div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="blush-block"></div>
+      <div class="hero-photo"></div>
+    </div>
+
+    <div class="hero-quote">
+      <div class="quote-mark">&ldquo;</div>
+      <p>I believe the smallest details can turn a good idea into something memorable.</p>
+      <div class="quote-flourish">
+        <span class="line"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 14V3M7 5C7 5 3 4 2 1" stroke="#B08D57" stroke-width="1"/></svg>
+        <span class="line"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="col-photo">
+      <div class="frame"></div>
+    </div>
+
+    <div class="col-text">
+      <h2 class="serif">My Story</h2>
+      <p>I've always been drawn to creativity, problem-solving, and the beauty in the details. What started as a love for art and design quickly grew into a passion for building — not just beautiful things, but things that work.</p>
+      <p>Over time, I discovered how much I enjoy bringing ideas to life through design, code, and storytelling. Every project I take on is a chance to learn, grow, and make a positive impact, whether it's through visual art, web development, or creative content.</p>
+    </div>
+
+    <div class="col-text divider">
+      <h2 class="serif">My Mission</h2>
+      <p>My mission is to create meaningful, high-quality work that inspires, solves problems, and makes a difference. I want to use my skills to tell compelling stories, build useful tools, and bring beauty and purpose into everything I do.</p>
+      <h2 class="serif">How I Work</h2>
+      <p>I'm intentional, collaborative, and always focused on the details. I value clear communication, creative problem-solving, and a steady work ethic. I take pride in delivering thoughtful, polished work — and I'm always open to feedback, new ideas, and opportunities to improve.</p>
+    </div>
+
+    <div class="col-guides">
+      <span class="script">What Guides Me</span>
+
+      <div class="guide-row">
+        <div class="guide-circle rose">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22V6M12 9C12 9 6 8 4 2M12 13C12 13 18 12 20 6" stroke="#B08D57" stroke-width="1.3"/></svg>
+        </div>
+        <div class="guide-text">
+          <div class="label">INTENTIONAL</div>
+          <p>I put thought and purpose into everything I do.</p>
+        </div>
+      </div>
+
+      <div class="guide-row">
+        <div class="guide-circle sage">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10Z" stroke="#B08D57" stroke-width="1.2"/></svg>
+        </div>
+        <div class="guide-text">
+          <div class="label">DETAIL-ORIENTED</div>
+          <p>The little things matter — they make the big things better.</p>
+        </div>
+      </div>
+
+      <div class="guide-row">
+        <div class="guide-circle rose">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 5C6 3 10 3 12 5C14 3 18 3 21 5V19C18 17 14 17 12 19C10 17 6 17 3 19V5Z" stroke="#B08D57" stroke-width="1.2"/></svg>
+        </div>
+        <div class="guide-text">
+          <div class="label">ALWAYS LEARNING</div>
+          <p>I stay curious, open-minded, and excited for what's next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <div class="footer-florals"></div>
+    <div class="footer-marble"></div>
+    <div class="footer-inner">
+      <span class="script">Let's build something great.</span>
+      <div class="footer-arrow-line"><span class="line"></span>→</div>
+      <a href="#" class="cta-btn">VIEW MY PROJECTS →</a>
+    </div>
+  </section>

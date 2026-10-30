@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGW Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F1E6;
+    --blush:#F0DAD3;
+    --gold:#B8935A;
+    --mauve:#C0899A;
+    --charcoal:#2E2A26;
+    --sage:#A3B08E;
+    --card:#FDFBF7;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Montserrat', sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  img, .ph{ max-width:100%; display:block; }
+  a{ text-decoration:none; color:inherit; }
+
+  /* ===== HEADER ===== */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 60px;
+    background:var(--cream);
+  }
+  .logo-block{ display:flex; align-items:center; gap:18px; }
+  .monogram{
+    width:56px; height:56px;
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--gold);
+    letter-spacing:1px;
+  }
+  .logo-divider{ width:1px; height:34px; background:#d8cdb8; }
+  .logo-text{
+    font-family:'Playfair Display', serif;
+    font-size:21px;
+    letter-spacing:3px;
+    color:var(--charcoal);
+  }
+  nav{ display:flex; gap:38px; }
+  nav a{
+    font-size:12.5px;
+    letter-spacing:1.5px;
+    font-weight:500;
+    color:var(--charcoal);
+    padding-bottom:6px;
+    position:relative;
+  }
+  nav a.active{ color:var(--gold); border-bottom:1px solid var(--gold); }
+  .tagline-block{ display:flex; align-items:center; gap:16px; }
+  .sprig{ width:34px; height:44px; }
+  .tagline-divider{ width:1px; height:30px; background:#d8cdb8; }
+  .tagline-script{
+    font-family:'Alex Brush', cursive;
+    font-size:22px;
+    color:var(--gold);
+    letter-spacing:1px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    display:flex;
+    min-height:460px;
+  }
+  .hero-left{
+    flex:0 0 46%;
+    background:var(--blush);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 70px;
+    position:relative;
+  }
+  .hero-intro{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .script-sm{
+    font-family:'Alex Brush', cursive;
+    font-size:24px;
+    color:var(--gold);
+  }
+  .line-sm{ width:70px; height:1px; background:var(--gold); }
+  .hero-left h1{
+    font-family:'Playfair Display', serif;
+    font-weight:500;
+    font-size:52px;
+    line-height:1.15;
+    color:var(--charcoal);
+    margin-bottom:22px;
+  }
+  .hero-left h1 em{ font-style:italic; color:var(--gold); font-weight:400; }
+  .hero-left p{
+    font-size:15px;
+    line-height:1.7;
+    max-width:380px;
+    margin-bottom:32px;
+    color:#4a4540;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--gold);
+    color:#fff;
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:600;
+    padding:16px 28px;
+    width:fit-content;
+  }
+  .hero-right{
+    flex:1;
+    position:relative;
+    display:flex;
+  }
+  .hero-photo{
+    flex:1;
+    background:
+      radial-gradient(circle at 65% 40%, #f3c9d4 0%, #eeb8c6 22%, transparent 45%),
+      radial-gradient(circle at 40% 55%, #f6d3dc 0%, #f0bccb 20%, transparent 42%),
+      linear-gradient(120deg, #efe6da, #e7d9c8);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-photo::after{
+    content:"peonies · candle · books — replace with real photo";
+    position:absolute; bottom:16px; left:16px;
+    font-size:11px; color:rgba(46,42,38,.45); letter-spacing:.5px;
+  }
+  .hero-side{
+    flex:0 0 9%;
+    background:
+      linear-gradient(160deg, #f4f1ec, #eae5dc);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px 10px;
+    position:relative;
+  }
+  .hero-side .script-sm{ font-size:19px; line-height:1.5; }
+  .hero-side .line-sm{ width:34px; margin-top:12px; }
+
+  /* ===== FEATURED PROJECTS ===== */
+  .projects{
+    padding:80px 60px 90px;
+    position:relative;
+    display:flex;
+  }
+  .side-bar{
+    flex:0 0 30px;
+    background:var(--sage);
+    margin-right:40px;
+    align-self:stretch;
+  }
+  .projects-main{ flex:1; }
+  .projects-header{ text-align:center; margin-bottom:50px; position:relative; }
+  .projects-header .script-sm{ display:block; margin-bottom:6px; }
+  .projects-header h2{
+    font-family:'Playfair Display', serif;
+    font-size:38px;
+    letter-spacing:4px;
+    font-weight:500;
+  }
+  .header-flourish{
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    margin-bottom:8px;
+  }
+  .header-flourish .line-sm{ width:60px; }
+  .view-all{
+    position:absolute; top:10px; right:0;
+    font-size:12px; letter-spacing:1.5px; color:var(--gold); font-weight:600;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .card{ background:var(--card); }
+  .card-photo{
+    height:190px;
+    background:linear-gradient(135deg, #ece2d3, #e2d6c2);
+    position:relative;
+  }
+  .card-photo::after{
+    position:absolute; bottom:10px; left:10px;
+    font-size:10px; color:rgba(46,42,38,.4);
+  }
+  .card:nth-child(1) .card-photo{ background:linear-gradient(135deg,#f6e2e2,#ecd6d0); }
+  .card:nth-child(1) .card-photo::after{ content:"watercolor + brushes photo"; }
+  .card:nth-child(2) .card-photo{ background:linear-gradient(135deg,#efe9df,#e5f0e6); }
+  .card:nth-child(2) .card-photo::after{ content:"laptop + florals photo"; }
+  .card:nth-child(3) .card-photo{ background:linear-gradient(135deg,#2b2b2b,#3a3a3a); }
+  .card:nth-child(3) .card-photo::after{ content:"code editor photo"; color:rgba(255,255,255,.4); }
+  .card-body{ padding:24px 6px 0; }
+  .card-label{
+    font-size:11.5px; letter-spacing:1.5px; font-weight:600; color:var(--mauve);
+    margin-bottom:10px;
+  }
+  .card h3{
+    font-family:'Playfair Display', serif;
+    font-size:22px; font-weight:500;
+    margin-bottom:10px;
+  }
+  .card p{ font-size:14px; line-height:1.6; color:#5a544c; margin-bottom:14px; max-width:280px; }
+  .card-link{ font-size:12px; letter-spacing:1.5px; font-weight:600; color:var(--gold); }
+
+  /* ===== CLOSING STRIP ===== */
+  .closing{
+    text-align:center;
+    padding:50px 20px 60px;
+    background:
+      linear-gradient(90deg, transparent 0%, transparent 15%, #efece7 15%, #efece7 85%, transparent 85%),
+      var(--cream);
+  }
+  .closing-flourish{ display:flex; align-items:center; justify-content:center; gap:20px; }
+  .closing .line-sm{ width:90px; }
+  .closing .script-sm{ font-size:20px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px){
+    header{ flex-direction:column; gap:16px; padding:20px 24px; }
+    nav{ flex-wrap:wrap; justify-content:center; gap:20px; }
+    .hero{ flex-direction:column; }
+    .hero-left{ flex:none; padding:50px 30px; }
+    .hero-left h1{ font-size:36px; }
+    .hero-right{ flex-direction:column; }
+    .hero-photo{ min-height:260px; }
+    .hero-side{ flex:none; padding:30px; }
+    .projects{ flex-direction:column; padding:50px 24px; }
+    .side-bar{ display:none; }
+    .cards{ grid-template-columns:1fr; }
+    .view-all{ position:static; display:block; text-align:center; margin-top:16px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-block">
+      <div class="monogram">BGW</div>
+      <div class="logo-divider"></div>
+      <div class="logo-text">BGW STUDIOS</div>
+    </div>
+    <nav>
+      <a href="#" class="active">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">PROJECTS</a>
+      <a href="#">DOCUMENTATION</a>
+      <a href="#">CONTACT</a>
+    </nav>
+    <div class="tagline-block">
+      <svg class="sprig" viewBox="0 0 34 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 44V10" stroke="#B8935A" stroke-width="1"/>
+        <path d="M17 14C17 14 8 12 6 4" stroke="#B8935A" stroke-width="1"/>
+        <path d="M17 20C17 20 26 18 28 8" stroke="#B8935A" stroke-width="1"/>
+        <path d="M17 28C17 28 10 27 8 20" stroke="#B8935A" stroke-width="1"/>
+      </svg>
+      <div class="tagline-divider"></div>
+      <div class="tagline-script">Create · Build · Inspire</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-intro">
+        <span class="script-sm">Welcome to BGW Studios</span>
+        <span class="line-sm"></span>
+      </div>
+      <h1>Where creativity<br>meets <em>intention</em>.</h1>
+      <p>Thoughtful craftsmanship, a sharp eye for detail, and a passion for creativity. I bring together design, coding, and documentation to turn ideas into meaningful, lasting work.</p>
+      <a href="#" class="btn">EXPLORE MY WORK &nbsp;→</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo"></div>
+      <div class="hero-side">
+        <span class="script-sm">Big dreams, thoughtful work.</span>
+        <span class="line-sm"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects">
+    <div class="side-bar"></div>
+    <div class="projects-main">
+      <div class="projects-header">
+        <span class="script-sm">Featured</span>
+        <div class="header-flourish">
+          <span class="line-sm"></span>
+          <h2>PROJECTS</h2>
+          <span class="line-sm"></span>
+        </div>
+        <a href="#" class="view-all">VIEW ALL PROJECTS →</a>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-photo"></div>
+          <div class="card-body">
+            <div class="card-label">ART &amp; DESIGN</div>
+            <h3>Floral Watercolor Series</h3>
+            <p>A collection of original watercolor pieces inspired by nature, softness, and light.</p>
+            <a href="#" class="card-link">VIEW PROJECT →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-photo"></div>
+          <div class="card-body">
+            <div class="card-label">WEBSITE DEVELOPMENT</div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A clean, responsive website built from scratch using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="card-link">VIEW PROJECT →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-photo"></div>
+          <div class="card-body">
+            <div class="card-label">CODING PROJECT</div>
+            <h3>Task Manager App</h3>
+            <p>A simple, functional productivity app built with Python and Flask.</p>
+            <a href="#" class="card-link">VIEW PROJECT →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="closing-flourish">
+      <span class="line-sm"></span>
+      <span class="script-sm">More than just projects — it's a reflection of my purpose.</span>
+      <span class="line-sm"></span>
+    </div>
+  </section>
+
+</body>
+</html>
